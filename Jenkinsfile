@@ -7,8 +7,8 @@ stage('scm checkout')
 
 
 stage('compile the job')    //validate then compile
-{steps { withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-    sh 'mvn compile'
+{steps { withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
+   sh 'mvn compile'    // some block
 } }}
 
 }
