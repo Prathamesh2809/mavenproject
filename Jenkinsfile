@@ -18,7 +18,7 @@ stage('execute a unit test framework')
 
 stage('Build the code')    
 {steps { withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) {
-   sh 'mvn package'    
+   sh 'clean mvn package'    
 } }}
 
 
