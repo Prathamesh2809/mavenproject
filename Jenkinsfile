@@ -21,6 +21,12 @@ stage('Build the code')
    sh 'mvn clean -B -DskipTests package'    
 } }}
 
+stage('Push the code to tomcat server')
+{ steps{ sshagent (credentials: ['deploy-dev']) {
+    sh 'ssh -o StrictHostKeyChecking=no /webapp/target/webapps.war ec2-user@172.31.22.148:/usr/share/tomcat/webapps'
+  }}
+}
+
 
 }
 }
