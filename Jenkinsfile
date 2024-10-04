@@ -31,9 +31,9 @@ stage('Build the code')
 //   }}
 // }
 
-stage('deploy to tomcat')
-{ steps { sshagent(['TOMCATCICD'])
-  { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@172.31.30.204:/usr/share/tomcat/webapps'  } } }
+// stage('deploy to tomcat')
+// { steps { sshagent(['TOMCATCICD'])
+//   { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@172.31.30.204:/usr/share/tomcat/webapps'  } } }
 
 
 }
