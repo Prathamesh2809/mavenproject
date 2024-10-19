@@ -26,7 +26,7 @@ stage('Build the code')
 } }}
 
  stage('build docker image')
- {steps { sh 'docker build -t pkw0301/devops:tomcat .' }}
+ {steps { sh 'docker build -t prathamesh2809/devops:tomcat .' }}
 
  stage('push docker image to dockerhub')
  {step{ 
