@@ -26,12 +26,12 @@ stage('Build the code')
 } }}
 
  stage('build docker image')
- {steps { sh 'docker build -t prathamesh2809/devops:tomcat .' }}
+ {steps { sh 'docker build -t 010928188483.dkr.ecr.ap-southeast-1.amazonaws.com/prod/myapp:latest .' }}
 
  stage('push docker image to dockerhub')
  {steps{ 
-    withDockerRegistry(credentialsId: 'dockerhub-cred', url: 'https://index.docker.io/v1/') {
-    sh 'docker push prathamesh2809/devops:tomcat'
+    withDockerRegistry(credentialsId: 'ecr:ap-southeast-1:AWS-cred', url: 'https://010928188483.dkr.ecr.ap-southeast-1.amazonaws.com/prod/myapp') {
+    sh 'docker push 010928188483.dkr.ecr.ap-southeast-1.amazonaws.com/prod/myapp:latest'
 }
   }}
 
