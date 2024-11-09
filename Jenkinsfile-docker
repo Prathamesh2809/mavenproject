@@ -35,6 +35,11 @@ stage('Build the code')
 }
   }}
 
+stage('deploy to k8s')
+{steps{  withDockerRegistry(credentialsId: 'ecr:ap-southeast-1:AWS-cred', url: 'https://010928188483.dkr.ecr.ap-southeast-1.amazonaws.com/prod/myapp') {
+    sh 'kubectl apply -f manifest.yaml'
+} }}
+
 }
 }
 
